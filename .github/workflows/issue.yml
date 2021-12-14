@@ -4,7 +4,7 @@ on:
     types:
       - labeled
 jobs:
-  add-comment:
+  regist:
     if: github.event.label.name == 'regist'
     runs-on: ubuntu-latest
     permissions:
@@ -16,6 +16,29 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             네트워크 키 검증이 시작되었습니다. :sparkles:
+      - name: Install dependency
+        run: |
+          cd actions/regist
+          npm i
+      - name: Run validation
+        id: valid
+        run: |
+          node . ${{ github.event.issue.body }} ${{ secrets.JWT_TOKEN }}
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+        with:
+          if: steps.valid.outputs.netkey_valid == 'true'
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            네트워크 키 검증에 성공하였습니다. :tada:
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+        with:
+          if: steps.valid.outputs.netkey_valid == 'false'
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            네트워크 키가 잘못되었거나 만료되었습니다. :sad:
+            [이곳](https://github.com/GBSWHS/.github/issues/new?assignees=pmh-only&labels=regist&template=regist.yml&title=%EA%B0%80%EC%9E%85%EC%8B%A0%EC%B2%AD#new_issue)에서 다시시도해 주세요
       - name: Close Issue
         uses: peter-evans/close-issue@v1
         with:
