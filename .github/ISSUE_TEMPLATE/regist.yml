@@ -9,12 +9,16 @@ body:
     attributes:
       value: |
         다음의 정보를 제출하여 학생개발단에 가입하고자 합니다.
-  - type: input
+  - type: dropdown
     id: regist_year
     attributes:
       label: 입학년도
       description: 입학년도를 선택해 주세요.
-      options: ["2021", "2022", "2023"]
+      multiple: false
+      options: 
+        - 2021
+        - 2022
+        - 2023
     validations:
       required: true
   - type: input
