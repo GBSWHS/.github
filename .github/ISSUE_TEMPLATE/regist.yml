@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        다음의 정보를 제출하여 학생개발단에 가입하고자 합니다.
+        학생개발단에 가입하려면 다음 정보를 입력하세요.
   - type: dropdown
     id: regist_year
     attributes:
@@ -39,3 +39,8 @@ body:
       placeholder: eyJ....
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        가입까지 최대 1분이 걸릴 수 있습니다.\
+        Github Action의 작동을 기다려주세요.
