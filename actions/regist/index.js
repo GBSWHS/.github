@@ -7,9 +7,8 @@ const secret = process.argv[3]
 
 
   try {
-    const data = jwt.verify(token, secret)
-    console.log(data)
-    console.log(`::set-output name=netkey_valid::${data.exp <= Date.now() / 1000}`)
+    jwt.verify(token, secret)
+    console.log(`::set-output name=netkey_valid::true`)
   } catch (_) {
     console.log('::set-output name=netkey_valid::false')
   }
