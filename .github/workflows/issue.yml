@@ -45,6 +45,14 @@ jobs:
             -d '{"invitee_id":"${{ github.event.issue.user.login }}"} || exit 0'
       - name: Add comment
         uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+        if: steps.valid.outputs.netkey_valid == 'true'
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            학생개발단에 가입하신것을 환영합니다! :wave:\
+            [이곳](https://github.com/orgs/GBSWHS/invitation)으로 이동해 가입을 수락해주세요!
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
         if: steps.valid.outputs.netkey_valid != 'true'
         with:
           issue-number: ${{ github.event.issue.number }}
