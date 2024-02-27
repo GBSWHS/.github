@@ -1,20 +1,12 @@
 ![gbswhs](https://github.com/GBSWHS/.github-private/assets/127307160/092b1111-56fd-4dfc-b188-7e0ad63b1a96)
 
-**경북소프트웨어고등학교 공식 홈페이지**  
+**경북소프트웨어고등학교 공식 홈페이지** [[바로가기]](https://gbsw.hs.kr)
 
-[https://school.gyo6.net/gbsw/main.do?sysId=gbsw](https://school.gyo6.net/gbsw/main.do?sysId=gbsw)
+**경소고 스쿨캠핑 사이트** [[바로가기]](https://camping.gbsw.hs.kr/)
 
-**경소고 스쿨캠핑 사이트**
+**경소고 통합로그인 API** [[바로가기]](https://github.com/redarchive/center-oidc/wiki)
 
-[https://camping.gbsw.hs.kr/](https://camping.gbsw.hs.kr/)
-
-**경소고 통합로그인 API**  
-
-[https://github.com/redarchive/center-oidc/wiki](https://github.com/redarchive/center-oidc/wiki)
-
-**경소고 2,3학년 캡스톤 프로젝트**
-
-[https://sites.google.com/view/gbsw2023/](https://sites.google.com/view/gbsw2023/)
+**경소고 2,3학년 캡스톤 프로젝트** [[바로가기]](https://sites.google.com/view/gbsw2023/)
 
 ## 경소고 기능반
 - 사이버 보안
